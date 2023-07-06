@@ -6,12 +6,14 @@ itens.forEach( (elemento) => {
     criaElemento(elemento)
 } )
 
+//evento executado quando o botão "adicionar" é apertado
 form.addEventListener("submit", (evento) => {
     evento.preventDefault()
 
     const nome =  evento.target.elements['nome']
     const quantidade = evento.target.elements['quantidade']
 
+    //  Const para conferir elemento nome no array itens 
     const existe = itens.find( elemento => elemento.nome === nome.value )
 
     const itemAtual = {
@@ -19,14 +21,15 @@ form.addEventListener("submit", (evento) => {
         "quantidade": quantidade.value
     }
 
+    // Condicional para conferir se o elemento existe
     if(existe) {
         itemAtual.id = existe.id
         
         atualizaElemento(itemAtual)
 
-        itens[existe.id] = itemAtual
+        itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual
     } else {
-        itemAtual.id = itens.length
+        itemAtual.id = itens[itens.length -1] ? (itens[itens.length-1]).id + 1 : 0
 
         criaElemento(itemAtual)
 
@@ -39,6 +42,7 @@ form.addEventListener("submit", (evento) => {
     quantidade.value = ""
 });
 
+// função para criar itens
 function criaElemento(item) {
     const novoItem = document.createElement('li')
     novoItem.classList.add("item")
@@ -50,9 +54,34 @@ function criaElemento(item) {
 
     novoItem.innerHTML += item.nome
 
+    novoItem.appendChild(botaoDeleta(item.id))
+
     lista.appendChild(novoItem)
 }
 
+//função para atualizar itens
 function atualizaElemento(item) {
     document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade
+}
+
+//botão "X" para deletar itens na interface
+function botaoDeleta(id)  {
+    const elementoBotao = document.createElement("button")
+    elementoBotao.innerText = "X"
+
+    elementoBotao.addEventListener("click", function() {
+        deletaElemento(this.parentNode, id)
+    })
+
+    return elementoBotao
+}
+
+//função para remover itens
+function deletaElemento(tag, id) {
+    tag.remove()
+
+    itens.splice(itens.findIndex(elemento => elemento.id === id), 1)
+
+    //escrever no localStore
+    localStorage.setItem("itens", JSON.stringify(itens))
 }
