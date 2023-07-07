@@ -1,7 +1,7 @@
 <h1 align="center"> Mochila de viagem </h1>
 <br>
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=GREEN&style=for-the-badge)
 
 
 Projeto feito através das aulas da Alura em JavaScript para treinar o armazenamento de dados no navegador.
