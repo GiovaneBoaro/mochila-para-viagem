@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color: radial-gradient(farthest-corner at right top, #8fb08f, #283328);
+    --main-bg-color: radial-gradient(#8fb08f, #718671);
     --primary-color: #eed9c4;
     --bg-fields: #fff;
     --fields: #400847;
@@ -149,17 +149,16 @@ html {
 
 @media (max-width: 1200px) {
     html {
-        height: 100%;
+        background-size: 100% 100%;
     }
-
 
     .conteudo {
         width: auto;
         flex-direction: column;
         text-overflow: ellipsis;
         align-items: center;
-    }
 
+    }
 
     .principal {
         flex-direction: column;
