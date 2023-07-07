@@ -11,8 +11,9 @@ Projeto feito através das aulas da Alura, no curso JavaScript na Web: armazenan
 
 Layout em telas maiores:
 ![image](https://github.com/GiovaneBoaro/mochila-para-viagem/assets/96142962/779c046d-c9e9-4bdc-84dd-2046f950c1fa)
-************
+
 Exemplo de funcionalidade em Smartphones:
+
 ![gifmochila](https://github.com/GiovaneBoaro/projeto-alura/assets/96142962/8b7b6dc4-5373-44c2-8ece-513eab96ff04)
 
 
